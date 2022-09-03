@@ -1,0 +1,44 @@
+pragma solidity ^0.5.1;
+
+
+contract OpenPoints {
+    address public owner;
+    string info = "Open points version 0.1.0";
+    mapping(address => uint256) public points;
+    
+    event Issue(address indexed _to, uint _point);
+    event Burn(address indexed _from, uint _point);
+
+
+   constructor() public{
+       owner = msg.sender;
+   }
+
+    modifier onlyOwner {
+    require(msg.sender == owner, "Ownable: You are not the owner, Bye.");
+            _;
+        }
+
+    function getInfo() public view returns(string memory){
+        return  info;
+    }
+   
+    function issuePoint(address userAddress, uint point) public onlyOwner {
+        points[userAddress] += point;
+        emit Issue(userAddress, point);
+    }
+
+    function burnPoint(address userAddress, uint point) public onlyOwner {
+        require(points[userAddress] >= point, "PointError: insufficient points");
+        points[userAddress] -= point;
+        emit Burn(userAddress, point);
+    }
+
+    function userPoints(address userAddress) public view returns(uint) {
+        return points[userAddress];
+    }
+
+    function myPoints() public view returns(uint) {
+        return points[msg.sender];
+    }
+}
