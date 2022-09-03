@@ -1,2 +1,2 @@
 # OpenLP
-Open Loyality Points (OpenLP) is an Opensource Loyality Point platform build top on public blockchain.
+Open Loyality Points (OpenLP) is an opensource Loyality Point platform build top on public blockchain.
