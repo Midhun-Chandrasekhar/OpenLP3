@@ -14,7 +14,6 @@ Place: Kerala, In
 
 ### Build
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dwyl/auth_plug/Elixir%20CI?label=build&style=flat-square)
-![Known Vulnerabilities](https://snyk.io/test/github/{username}/{repo}/badge.svg)
 ![](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 <br>
 
